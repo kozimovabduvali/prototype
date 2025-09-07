@@ -75,3 +75,24 @@
 .no-scroll::-webkit-scrollbar {
   @apply !size-0;
 }
+
+/* border animation */
+.border-btn-2 {
+  border: 2px solid transparent;
+  border-radius: 48px;
+  background-image: linear-gradient(to right, #edda9f, #edda9f),
+    linear-gradient(90deg, #ffffff 0%, #b0b0b0 50%, #ffffff 100%);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-size: 200% 100%; /* 2x kenglik */
+  animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 200% 0, 200% 0;
+  }
+}
