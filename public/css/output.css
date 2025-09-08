@@ -19,6 +19,7 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -875,6 +876,11 @@
       line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
+  .md\:text-main-25 {
+    @media (width >= 48rem) {
+      font-size: var(--text-main-25);
+    }
+  }
   .lg\:col-span-2 {
     @media (width >= 64rem) {
       grid-column: span 2 / span 2;
@@ -1081,6 +1087,12 @@
       padding-left: calc(var(--spacing) * 10);
     }
   }
+  .lg\:text-lg\/6 {
+    @media (width >= 64rem) {
+      font-size: var(--text-lg);
+      line-height: calc(var(--spacing) * 6);
+    }
+  }
   .lg\:text-xl {
     @media (width >= 64rem) {
       font-size: var(--text-xl);
@@ -1121,6 +1133,12 @@
     @media (width >= 80rem) {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .xl\:text-4xl\/\[125\%\] {
+    @media (width >= 80rem) {
+      font-size: var(--text-4xl);
+      line-height: 125%;
     }
   }
   .xl\:text-main-40\/\[125\%\] {
