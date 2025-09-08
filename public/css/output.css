@@ -577,11 +577,17 @@
   .py-4\.5 {
     padding-block: calc(var(--spacing) * 4.5);
   }
+  .pt-7 {
+    padding-top: calc(var(--spacing) * 7);
+  }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
   .pt-16\.5 {
     padding-top: calc(var(--spacing) * 16.5);
+  }
+  .pb-7 {
+    padding-bottom: calc(var(--spacing) * 7);
   }
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
