@@ -439,6 +439,12 @@
   .max-w-228 {
     max-width: calc(var(--spacing) * 228);
   }
+  .min-w-9 {
+    min-width: calc(var(--spacing) * 9);
+  }
+  .min-w-9\.5 {
+    min-width: calc(var(--spacing) * 9.5);
+  }
   .min-w-75 {
     min-width: calc(var(--spacing) * 75);
   }
@@ -883,6 +889,13 @@
       }
     }
   }
+  .group-hover\:min-w-52 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        min-width: calc(var(--spacing) * 52);
+      }
+    }
+  }
   .group-hover\:translate-x-0 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -1297,6 +1310,11 @@
   .lg\:max-w-168\.25 {
     @media (width >= 64rem) {
       max-width: calc(var(--spacing) * 168.25);
+    }
+  }
+  .lg\:min-w-12\.5 {
+    @media (width >= 64rem) {
+      min-width: calc(var(--spacing) * 12.5);
     }
   }
   .lg\:gap-6\.25 {
