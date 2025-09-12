@@ -51,23 +51,81 @@
 
   <!-- Main -->
   <main class="container-base">
-    <section class="text-white pt-15 pb-40">
+    <section class="text-white pt-10 lg:pt-15 pb-20 lg:pb-40">
       <div>
         <div>
-          <h1 class="font-bold text-2xl leading-none">
-            Способ оплаты
+          <h1 class="font-bold text-main-23 md:text-4xl lg:text-5xl leading-none mb-4 lg:mb-9">
+            Смена карты
           </h1>
+          <h3 class="font-medium text-lg md:text-2xl lg:text-3xl leading-none mb-3.5 lg:mb-5">
+            Выбери новый способ оплаты для продления подписки.
+          </h3>
+
+          <p class="text-sm lg:text-lg leading-none mb-6 lg:mb-12.5">
+            Для проверки, банк спишет небольшую сумму и сразу же вернёт обратно.
+          </p>
+
+
+          <div class="grid lg:grid-cols-3 gap-x-9 gap-y-4">
+            <!-- 1 -->
+            <div
+              class="bg-secondary flex items-center justify-between gap-x-3 gap-y-5 rounded-3xl max-lg:min-h-11 px-6 py-2.5 lg:py-3.5">
+              <div class="w-full flex lg:flex-col justify-between gap-2.5">
+                <div class="flex items-center gap-5">
+                  <div class="flex items-center gap-2.5">
+                    <span class="shrink-0 block size-2.5 lg:size-3.75 bg-primary rounded-full"></span>
+                    <span class="shrink-0 block size-2.5 lg:size-3.75 bg-primary rounded-full"></span>
+                    <span class="shrink-0 block size-2.5 lg:size-3.75 bg-primary rounded-full"></span>
+                    <span class="shrink-0 block size-2.5 lg:size-3.75 bg-primary rounded-full"></span>
+                  </div>
+                  <span class="text-sm lg:text-xl text-primary">
+                    5467
+                  </span>
+                </div>
+                <span class="text-sm lg:text-xl text-primary">
+                  07/12
+                </span>
+              </div>
+              <img class="size-5 md:size-7.5 lg:size-12.5" src="./assets/icons/diamond.svg" alt="icons">
+            </div>
+
+            <!-- 2 -->
+            <a href="#"
+              class="flex-main-between px-5 lg:px-7.5 py-3.5 bg-white border border-transparent text-black rounded-3xl transition duration-200 hover:bg-transparent hover:text-white hover:border-white">
+              <span class="font-medium text-sm lg:text-xl">
+                Новая карта
+              </span>
+              <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V6V5.25ZM21.0303 6.53033C21.3232 6.23744 21.3232 5.76256 21.0303 5.46967L16.2574 0.696699C15.9645 0.403806 15.4896 0.403806 15.1967 0.696699C14.9038 0.989593 14.9038 1.46447 15.1967 1.75736L19.4393 6L15.1967 10.2426C14.9038 10.5355 14.9038 11.0104 15.1967 11.3033C15.4896 11.5962 15.9645 11.5962 16.2574 11.3033L21.0303 6.53033ZM1 6V6.75H20.5V6V5.25H1V6Z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+
+            <!-- 2 -->
+            <a href="#"
+              class="flex-main-between px-5 lg:px-7.5 py-3.5 bg-transparent border border-white text-white rounded-3xl transition duration-200 hover:bg-white hover:text-black hover:border-transparent">
+              <span class="font-medium text-sm lg:text-xl">
+                Удалить карту
+              </span>
+              <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V6V5.25ZM21.0303 6.53033C21.3232 6.23744 21.3232 5.76256 21.0303 5.46967L16.2574 0.696699C15.9645 0.403806 15.4896 0.403806 15.1967 0.696699C14.9038 0.989593 14.9038 1.46447 15.1967 1.75736L19.4393 6L15.1967 10.2426C14.9038 10.5355 14.9038 11.0104 15.1967 11.3033C15.4896 11.5962 15.9645 11.5962 16.2574 11.3033L21.0303 6.53033ZM1 6V6.75H20.5V6V5.25H1V6Z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="pt-4">
+  <footer class="py-4">
     <div
       class="container-base flex-main-between max-md:!flex-col max-md:!items-start gap-3 font-light text-white/90 text-sm lg:text-lg">
       <!-- Left -->
-      <div>
+      <div class="space-y-2">
         <h6>
           Все права защищены.
         </h6>
@@ -77,7 +135,7 @@
       </div>
 
       <!-- Right -->
-      <div class="md:text-right">
+      <div class="md:text-right space-y-2">
         <h6>
           Оферта
         </h6>
