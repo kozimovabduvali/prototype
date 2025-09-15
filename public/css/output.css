@@ -8,12 +8,15 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
@@ -26,8 +29,6 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
-    --text-6xl: 3.75rem;
-    --text-6xl--line-height: 1;
     --font-weight-light: 300;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -245,6 +246,9 @@
   .-mx-3\.75 {
     margin-inline: calc(var(--spacing) * -3.75);
   }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -415,12 +419,6 @@
   .h-4\.5 {
     height: calc(var(--spacing) * 4.5);
   }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
-  .h-7 {
-    height: calc(var(--spacing) * 7);
-  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -442,9 +440,6 @@
   .h-12\.5 {
     height: calc(var(--spacing) * 12.5);
   }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
   .h-22 {
     height: calc(var(--spacing) * 22);
   }
@@ -456,6 +451,9 @@
   }
   .h-65 {
     height: calc(var(--spacing) * 65);
+  }
+  .h-full {
+    height: 100%;
   }
   .h-max {
     height: max-content;
@@ -471,6 +469,9 @@
   }
   .min-h-50 {
     min-height: calc(var(--spacing) * 50);
+  }
+  .min-h-\[calc\(100vh-140px\)\] {
+    min-height: calc(100vh - 140px);
   }
   .min-h-full {
     min-height: 100%;
@@ -550,9 +551,6 @@
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -645,6 +643,13 @@
       margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
   .gap-x-3 {
     column-gap: calc(var(--spacing) * 3);
   }
@@ -671,6 +676,9 @@
   }
   .overflow-x-auto {
     overflow-x: auto;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
@@ -793,6 +801,9 @@
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
+  .p-10 {
+    padding: calc(var(--spacing) * 10);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -816,15 +827,6 @@
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
-  }
-  .px-16 {
-    padding-inline: calc(var(--spacing) * 16);
-  }
-  .px-20 {
-    padding-inline: calc(var(--spacing) * 20);
-  }
-  .px-24 {
-    padding-inline: calc(var(--spacing) * 24);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -868,6 +870,10 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
   .text-5xl {
     font-size: var(--text-5xl);
@@ -1105,10 +1111,24 @@
       }
     }
   }
+  .hover\:text-primary {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-primary);
+      }
+    }
+  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
         color: var(--color-white);
+      }
+    }
+  }
+  .hover\:opacity-65 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 65%;
       }
     }
   }
@@ -1353,6 +1373,11 @@
       max-width: calc(var(--spacing) * 70);
     }
   }
+  .md\:max-w-75 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 75);
+    }
+  }
   .md\:flex-1 {
     @media (width >= 48rem) {
       flex: 1;
@@ -1408,6 +1433,12 @@
     @media (width >= 48rem) {
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .md\:text-base {
+    @media (width >= 48rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
   .md\:text-lg {
@@ -1561,11 +1592,6 @@
       height: calc(var(--spacing) * 6);
     }
   }
-  .lg\:h-6\.5 {
-    @media (width >= 64rem) {
-      height: calc(var(--spacing) * 6.5);
-    }
-  }
   .lg\:h-7 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 7);
@@ -1616,6 +1642,11 @@
       min-height: calc(var(--spacing) * 45);
     }
   }
+  .lg\:min-h-\[calc\(100vh-165px\)\] {
+    @media (width >= 64rem) {
+      min-height: calc(100vh - 165px);
+    }
+  }
   .lg\:w-7 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 7);
@@ -1664,6 +1695,11 @@
   .lg\:gap-8 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:gap-10 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 10);
     }
   }
   .lg\:gap-12 {
@@ -1846,6 +1882,12 @@
   .lg\:text-main-25 {
     @media (width >= 64rem) {
       font-size: var(--text-main-25);
+    }
+  }
+  .lg\:font-semibold {
+    @media (width >= 64rem) {
+      --tw-font-weight: var(--font-weight-semibold);
+      font-weight: var(--font-weight-semibold);
     }
   }
   .group-hover\:lg\:h-12 {
