@@ -474,6 +474,9 @@
   .h-screen {
     height: 100vh;
   }
+  .min-h-10 {
+    min-height: calc(var(--spacing) * 10);
+  }
   .min-h-32 {
     min-height: calc(var(--spacing) * 32);
   }
@@ -1745,6 +1748,11 @@
   .lg\:h-112 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 112);
+    }
+  }
+  .lg\:min-h-12\.5 {
+    @media (width >= 64rem) {
+      min-height: calc(var(--spacing) * 12.5);
     }
   }
   .lg\:min-h-45 {
