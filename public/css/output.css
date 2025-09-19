@@ -8,7 +8,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-black: #000;
     --color-white: #fff;
@@ -52,6 +51,7 @@
     --font-nunito: "Nunito Sans";
     --text-main-13: 0.8125rem;
     --text-main-23: 1.4375rem;
+    --text-main-40: 2.5rem;
     --text-main-25: 1.5625rem;
     --text-main-50: 3.125rem;
     --radius-body-30: 1.875rem;
@@ -252,6 +252,9 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .\!mb-15 {
+    margin-bottom: calc(var(--spacing) * 15) !important;
+  }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
@@ -305,6 +308,9 @@
   }
   .mb-14 {
     margin-bottom: calc(var(--spacing) * 14);
+  }
+  .mb-20 {
+    margin-bottom: calc(var(--spacing) * 20);
   }
   .ml-auto {
     margin-left: auto;
@@ -476,6 +482,9 @@
   .min-h-full {
     min-height: 100%;
   }
+  .\!w-87 {
+    width: calc(var(--spacing) * 87) !important;
+  }
   .\!w-full {
     width: 100% !important;
   }
@@ -500,6 +509,9 @@
   .max-w-50 {
     max-width: calc(var(--spacing) * 50);
   }
+  .max-w-80 {
+    max-width: calc(var(--spacing) * 80);
+  }
   .max-w-90 {
     max-width: calc(var(--spacing) * 90);
   }
@@ -511,6 +523,9 @@
   }
   .max-w-121 {
     max-width: calc(var(--spacing) * 121);
+  }
+  .max-w-170 {
+    max-width: calc(var(--spacing) * 170);
   }
   .max-w-171 {
     max-width: calc(var(--spacing) * 171);
@@ -674,6 +689,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .\!overflow-x-visible {
+    overflow-x: visible !important;
+  }
   .overflow-x-auto {
     overflow-x: auto;
   }
@@ -768,6 +786,12 @@
       background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
     }
   }
+  .bg-black\/60 {
+    background-color: color-mix(in srgb, #000 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+    }
+  }
   .bg-brand-gray-600 {
     background-color: var(--color-brand-gray-600);
   }
@@ -800,6 +824,12 @@
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
+  }
+  .p-7 {
+    padding: calc(var(--spacing) * 7);
+  }
+  .p-7\.5 {
+    padding: calc(var(--spacing) * 7.5);
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
@@ -843,11 +873,17 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
   .pt-7 {
     padding-top: calc(var(--spacing) * 7);
   }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
+  }
+  .pt-30 {
+    padding-top: calc(var(--spacing) * 30);
   }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
@@ -1111,13 +1147,6 @@
       }
     }
   }
-  .hover\:text-primary {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-primary);
-      }
-    }
-  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
@@ -1378,6 +1407,11 @@
       max-width: calc(var(--spacing) * 75);
     }
   }
+  .md\:max-w-100 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 100);
+    }
+  }
   .md\:flex-1 {
     @media (width >= 48rem) {
       flex: 1;
@@ -1410,6 +1444,11 @@
   .md\:px-6\.25 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 6.25);
+    }
+  }
+  .md\:px-10 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 10);
     }
   }
   .md\:text-right {
@@ -1627,6 +1666,11 @@
       height: calc(var(--spacing) * 15);
     }
   }
+  .lg\:h-16 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 16);
+    }
+  }
   .lg\:h-20 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 20);
@@ -1645,6 +1689,11 @@
   .lg\:min-h-\[calc\(100vh-165px\)\] {
     @media (width >= 64rem) {
       min-height: calc(100vh - 165px);
+    }
+  }
+  .lg\:\!w-100 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 100) !important;
     }
   }
   .lg\:w-7 {
@@ -1791,6 +1840,11 @@
       padding-inline: calc(var(--spacing) * 10);
     }
   }
+  .lg\:px-20 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 20);
+    }
+  }
   .lg\:px-24 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 24);
@@ -1882,6 +1936,11 @@
   .lg\:text-main-25 {
     @media (width >= 64rem) {
       font-size: var(--text-main-25);
+    }
+  }
+  .lg\:text-main-40 {
+    @media (width >= 64rem) {
+      font-size: var(--text-main-40);
     }
   }
   .lg\:font-semibold {
